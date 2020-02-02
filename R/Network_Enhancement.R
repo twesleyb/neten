@@ -29,10 +29,6 @@ Network_Enhancement <- function(W_in,
                                 alpha = 0.9,
                                 diffusion = 2,
                                 k = min(20, ceiling(Length(W_in) / 10))) {
-  # source("./Length.R")
-  # source("./NE_dn.R")
-  # source("./dominateset.R")
-  # source("TransitionFields.R")
   # Input should be a matrix.
   if (!is.matrix(W_in)) {
     W_in <- as.matrix(W_in)

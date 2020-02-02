@@ -3,7 +3,15 @@
 # Installation.
 devtools::install_github("twesleyb/neten")
 
+# Load the package.
 library(neten)
-data(butterfly)
 
-Network_Enhacement(butterfly)
+# Example data, before and after NE.
+data(butterfly)
+data(butterflyNE) # output from Matlab::Network_Enhancement
+
+# Perform NE.
+dmNE <- Network_Enhancement(butterfly)
+
+dmNE == butterflyNE
+
