@@ -28,13 +28,16 @@
 Network_Enhancement <- function(W_in,
                                 alpha = 0.9,
                                 diffusion = 2,
-                                k = min(20, ceiling(Length(W_in) / 10))) {
+                                k = NULL) {
   # Input should be a matrix.
   if (!is.matrix(W_in)) {
     W_in <- as.matrix(W_in)
   }
+  # Default k.
+  if (is.null(k)) {
+    k <- min(20, ceiling(Length(W_in) / 10))
+  }
   eps <- 2e-16
-  force(k)
   W_in1 <- W_in * (1 - diag(Length(W_in)))
   zeroindex <- which(colSums(abs(W_in)) > 0)
   W0 <- W_in[zeroindex, zeroindex]

@@ -4,8 +4,7 @@
 \alias{Network_Enhancement}
 \title{Network_Enhancement}
 \usage{
-Network_Enhancement(W_in, alpha = 0.9, diffusion = 2, k = min(20,
-  ceiling(Length(W_in)/10)))
+Network_Enhancement(W_in, alpha = 0.9, diffusion = 2, k = NULL)
 }
 \arguments{
 \item{W_in}{- input weighted N x N adjacency matrix}
