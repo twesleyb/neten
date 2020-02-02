@@ -6,8 +6,8 @@
 #'
 #' @return largest dimension of a matrix
 #'
-#' @author microbma, \github{https://github.com/microbma}
-#' @author Tyler Bradshaw, \github{https://github.com/twesleyb}
+#' @author microbma, \href{https://github.com/microbma}{github}
+#' @author Tyler Bradshaw, \href{https://github.com/twesleyb}{github}
 #'
 #' @references \href{https://bit.ly/2RS5pLX}{Wang, Pourshafeie, Zitnik, et al., 2018}
 #'

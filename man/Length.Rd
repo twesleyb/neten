@@ -19,9 +19,9 @@ R implementation of Network Enhacement
 \href{https://bit.ly/2RS5pLX}{Wang, Pourshafeie, Zitnik, et al., 2018}
 }
 \author{
-microbma, \github{https://github.com/microbma}
+microbma, \href{https://github.com/microbma}{github}
 
-Tyler Bradshaw, \github{https://github.com/twesleyb}
+Tyler Bradshaw, \href{https://github.com/twesleyb}{github}
 }
 \keyword{enhancement}
 \keyword{network}

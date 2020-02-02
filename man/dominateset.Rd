@@ -21,13 +21,13 @@ R implementation of Network Enhacement
 \href{https://bit.ly/2RS5pLX}{Wang, Pourshafeie, Zitnik, et al., 2018}
 }
 \author{
-danro9685, \github{https://github.com/danro9685/CIMLR}
+danro9685, \href{https://github.com/danro9685/CIMLR}{github}
 
-Bo Wang, \github{https://github.com/wangboyunze}
+Bo Wang, \href{https://github.com/wangboyunze}{github}
 
-microbma, \github{https://github.com/microbma}
+microbma, \href{https://github.com/microbma}{github}
 
-Tyler Bradshaw, \github{https://github.com/twesleyb}
+Tyler Bradshaw, \href{https://github.com/twesleyb}{github}
 }
 \keyword{enhancement}
 \keyword{network}
