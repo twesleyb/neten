@@ -18,7 +18,7 @@
 #'
 #' @export
 NE_dn <- function(w, type) {
-  source("Length.R")
+  # source("Length.R")
   eps <- 2e-16
   w <- w * Length(w)
   D <- rowSums(abs(w)) + eps

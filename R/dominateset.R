@@ -19,7 +19,7 @@
 #'
 #' @export
 dominateset <- function(aff_matrix, NR_OF_KNN) {
-  source("Length.R")
+  # source("Length.R")
   eps <- 2e-16
   A <- t(apply(aff_matrix, MARGIN = 1, function(x) sort(x, decreasing = TRUE)))
   B <- t(apply(aff_matrix, MARGIN = 1, function(x) order(x, decreasing = TRUE)))
