@@ -13,5 +13,7 @@ data(butterflyNE) # output from Matlab::Network_Enhancement
 # Perform NE.
 dmNE <- Network_Enhancement(butterfly)
 
-dmNE == butterflyNE
+# Check if R result is same as Matlab result.
+check <- all(round(dmNE,4) == round(butterflyNE,4))
 
+# They are the same!
