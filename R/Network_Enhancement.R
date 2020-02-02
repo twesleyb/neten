@@ -25,7 +25,18 @@
 #' @examples
 #' data(butterfly)
 #' neten(butterfly)
-neten <- function(W_in, alpha = 0.9, diffusion = 2, k = NULL) {
+neten <- function(W_in, weight = "weight",
+                  alpha = 0.9, diffusion = 2, k = NULL) {
+  # Imports.
+  suppressPackageStartupMessages({
+    library(igraph)
+  })
+  # Check if input is graph object.
+  is_graph <- is.igraph(W_in)
+  if (is_igraph) {
+    # Coerce to matrix.
+    W_in <- as.matrix(as_adjacency_matrix(W_in, attr = weight))
+  }
   # Input should be a matrix.
   if (!is.matrix(W_in)) {
     W_in <- as.matrix(W_in)
@@ -70,5 +81,15 @@ neten <- function(W_in, alpha = 0.9, diffusion = 2, k = NULL) {
   W_out[zeroindex, zeroindex] <- W
   # Set matrix names.
   colnames(W_out) <- rownames(W_out) <- nodes
-  return(W_out)
+  if (is_graph) {
+    # If input was a graph, return a graph.
+    g <- graph_from_adjacency_matrix(W_out,
+      mode = "undirected", weighted = TRUE
+    )
+    # Insure that edge attribute name is same as input graph.
+    names(edge_attr(g))[which(names(edge_attr(g)) == "weight")] <- weight
+    return(g)
+  } else {
+    return(W_out)
+  }
 }
