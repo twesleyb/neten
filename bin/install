@@ -1,6 +1,12 @@
 #!/usr/bin/env Rscript
 
-#tryCatch()
-remove.packages("neten")
+# Input arguments.
+user <- "twesleyb"
+package <- "neten"
 
-devtools::install_github("twesleyb/neten")
+# Check if package is installed.
+is_installed <- file.path(user,package) %in% rownames(installed.packages())
+# If installed, then remove it.
+if (is_installed) { remove.packages(file.path(user,package)) }
+# Install package from github.
+devtools::install_github(file.path(user,package))
