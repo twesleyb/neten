@@ -1,4 +1,4 @@
-#' Network_Enhancement
+#' neten
 #'
 #' R implementation of Network Enhancement
 #'
@@ -24,15 +24,19 @@
 #'
 #' @examples
 #' data(butterfly)
-#' Network_Enhancement(butterfly)
-Network_Enhancement <- function(W_in,
-                                alpha = 0.9,
-                                diffusion = 2,
-                                k = NULL) {
+#' neten(butterfly)
+neten <- function(W_in, alpha = 0.9, diffusion = 2, k = NULL) {
   # Input should be a matrix.
   if (!is.matrix(W_in)) {
     W_in <- as.matrix(W_in)
   }
+  # Input should be symmetric.
+  symmetric <- dim(W_in)[1] == dim(W_in)[2]
+  if (!symmetric) {
+    stop("Input matrix must be symmetric.")
+  }
+  # Get matrix names.
+  nodes <- colnames(W_in)
   # Default k.
   if (is.null(k)) {
     k <- min(20, ceiling(Length(W_in) / 10))
@@ -64,5 +68,7 @@ Network_Enhancement <- function(W_in,
   W <- (W + t(W)) / 2
   W_out <- matrix(0, nrow = nrow(W_in), ncol = ncol(W_in))
   W_out[zeroindex, zeroindex] <- W
+  # Set matrix names.
+  colnames(W_out) <- rownames(W_out) <- nodes
   return(W_out)
 }
