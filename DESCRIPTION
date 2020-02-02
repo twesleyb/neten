@@ -1,13 +1,16 @@
 Package: neten
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+Type: Package
+Title: R Implementation of Network Enhancement
+Version: 0.1.0
+Authors@R:
+    person(given="Tyler",
+           family="Bradshaw",
+           role = c("aut","cre"),
+           email="tyler.w.bradshaw@duke.edu")
+Maintainer: Tyler Bradshaw <tyler.w.bradshaw@duke.edu>
+Description: Remove noise from network with Network Enhacement algorithm from
+    Wang et al., 2018. 
+License: GNU V3
 Encoding: UTF-8
-LazyData: true
+LazyData: false
+RoxygenNote: 6.1.1
