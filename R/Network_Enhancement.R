@@ -33,7 +33,7 @@ neten <- function(W_in, weight = "weight",
   })
   # Check if input is graph object.
   is_graph <- is.igraph(W_in)
-  if (is_igraph) {
+  if (is_graph) {
     # Coerce to matrix.
     W_in <- as.matrix(as_adjacency_matrix(W_in, attr = weight))
   }
