@@ -1,3 +1,4 @@
 #!/usr/bin/env Rscript
 
+remove.packages("neten")
 devtools::install_github("twesleyb/neten")

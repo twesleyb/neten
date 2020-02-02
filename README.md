@@ -1,8 +1,8 @@
 # Introduction
 
-This is R code translated from https://github.com/wangboyunze/Network_Enhancement
-
-Project website: http://snap.stanford.edu/ne.
+This is a fork of [microbma's](https://github.com/microbma/neten) 
+R implementation of the [Network Enhancement](https://github.com/wangboyunze/Network_Enhancement)
+algorithm.
 
 ## Network Enhancement: a general method to denoise weighted biological networks
 
