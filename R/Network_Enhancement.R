@@ -53,7 +53,12 @@ neten <- function(W_in, weight = "weight",
     k <- min(20, ceiling(Length(W_in) / 10))
   }
   eps <- 2e-16
+
+  sample(
+  W_in <- matrix(
+
   W_in1 <- W_in * (1 - diag(Length(W_in)))
+
   zeroindex <- which(colSums(abs(W_in)) > 0)
   W0 <- W_in[zeroindex, zeroindex]
   W <- NE_dn(W0, "ave")
