@@ -7,6 +7,7 @@ function  [PNN_matrix]  = dominateset(aff_matrix,NR_OF_KNN);
 res = A(:,1:NR_OF_KNN);
 inds = repmat([1:length(aff_matrix)]',1,NR_OF_KNN);
 loc = B(:,1:NR_OF_KNN);
+
 PNN_matrix1 = zeros(size(aff_matrix));
 PNN_matrix1(sub2ind(size(aff_matrix),inds(:),loc(:))) = res(:);
 PNN_matrix = full(PNN_matrix1+PNN_matrix1')/2;

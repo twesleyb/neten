@@ -21,8 +21,10 @@
 dominateset <- function(aff_matrix, NR_OF_KNN) {
   # source("Length.R")
   eps <- 2e-16
+
   A <- t(apply(aff_matrix, MARGIN = 1, function(x) sort(x, decreasing = TRUE)))
   B <- t(apply(aff_matrix, MARGIN = 1, function(x) order(x, decreasing = TRUE)))
+
   res <- A[, 1:NR_OF_KNN]
   inds <- matrix(1:Length(aff_matrix), nrow = Length(aff_matrix), ncol = NR_OF_KNN)
   loc <- B[, 1:NR_OF_KNN]
