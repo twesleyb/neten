@@ -48,25 +48,30 @@ neten <- function(W_in, weight = "weight",
   }
   # Get matrix names.
   nodes <- colnames(W_in)
+
   # Default k.
   if (is.null(k)) {
     k <- min(20, ceiling(Length(W_in) / 10))
   }
+  # Default EPS.
   eps <- 2e-16
 
-  #W_in <- butterfly
+  library(neten)
+  data(butterfly)
+  W_in <- butterfly
   W_in1 <- W_in * (1 - diag(Length(W_in)))
   zeroindex <- which(colSums(abs(W_in)) > 0)
   W0 <- W_in[zeroindex, zeroindex]
-
   W <- NE_dn(W0, "ave")
   W <- (W + t(W)) / 2
   DD <- colSums(abs(W0))
+
   if (length(unique(as.vector(W))) == 2) {
     P <- W
   } else {
     P <- dominateset(abs(W), min(k, Length(W) - 1)) * sign(W)
   }
+
   P <- P + (diag(Length(P)) + diag(rowSums(abs(P))))
   P <- TransitionFields(P)
   eig <- eigen(P)
