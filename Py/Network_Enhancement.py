@@ -4,8 +4,28 @@ def Network_Enhancement(W_in,order=2,K,alpha=0.9):
 def is_symmetric(adjm):
     return(len(set(adjm.shape)) == 1)
 
+def sort_rows(Array,indices=False,decreasing=False):
+    # Sort rows of a numpy array.
+    from numpy import array
+    from numpy import sort
+    if not decreasing:
+        # Sort rows in increasing order.
+        Indices = Array.argsort()
+        Array = sort(Array,axis=-1)
+    elif decreasing:
+        # Sort rows in decreasing order.
+        n = range(Array.shape[0])
+        Indices = array([Array[i].argsort()[::-1] for i in n])
+        Array = array([sort(Array[i])[::-1] for i in n])
+    if indices:
+        return Array, Indices
+    else:
+        return Array
+# EOF
+
 # Import test data.
 from pandas import read_csv
+k = None
 adjm_input = read_csv('butterfly.csv',index_col=0)
 
 # Define default k.
@@ -38,6 +58,7 @@ adjm_norm = matmul(D,adjm_norm)
 W = (adjm_norm + adjm_norm.transpose())/2  
 DD = abs(W).sum(1)
 
+# Dominateset.
 from numpy import unique
 if len(unique(W)) == 2:
     P = W
@@ -45,33 +66,31 @@ else:
     ## Dominateset function....
     #P = dominateset(abs(W),min(k,Length(W)-1)) * sign(W)))
 
-def dominateset():
+def dominateset(A,nk=None):
+    if nk is None:
+        nk = min(k,max(list(A.shape))-1)
     pass
 
+# Default number of nearest neighbors.
+nk = min(k,max(list(W.shape))-1)
+from numpy.matlib import repmat
+from numpy import array
 # Sort each row in descending order...
 A,B = sort_rows(abs(W).values,indices=True,decreasing=True)
 
-def sort_rows(Array,indices=False,decreasing=False):
-    # Sort rows of a numpy array.
-    from numpy import array
-    from numpy import sort
-    if not decreasing:
-        # Sort rows in increasing order.
-        Indices = Array.argsort()
-        Array = sort(Array,axis=-1)
-    elif decreasing:
-        # Sort rows in decreasing order.
-        n = range(Array.shape[0])
-        Indices = array([Array[i].argsort()[::-1] for i in n])
-        Array = array([sort(Array[i])[::-1] for i in n])
-    if indices:
-        return Array, Indices
-    else:
-        return Array
-# EOF
-    
+res = A[:,0:nk]
 
+a = array(list(range(max(list(A.shape)))))
+inds = repmat(a,m=nk,n=1).transpose()
+loc = B[:,0:nk]
 
+from numpy import zeros
+pnn1 = zeros(A.shape)
+
+# C F A K
+x='C'
+idx = loc.flatten(x)-1 * list(A.shape)[0] + inds.flatten(x)
+idx
 
 
 
