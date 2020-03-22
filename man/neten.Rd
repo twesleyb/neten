@@ -4,8 +4,7 @@
 \alias{neten}
 \title{neten}
 \usage{
-neten(W_in, weight = "weight", alpha = 0.9, diffusion = 2,
-  k = NULL)
+neten(W_in, weight = "weight", alpha = 0.9, diffusion = 2, k = NULL)
 }
 \arguments{
 \item{W_in}{- input weighted N x N adjacency matrix}
