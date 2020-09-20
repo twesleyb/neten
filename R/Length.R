@@ -1,6 +1,6 @@
 #' Length
 #'
-#' R implementation of Network Enhacement
+#' R implementation of matlab's length function
 #'
 #' @param dm - input matrix
 #'

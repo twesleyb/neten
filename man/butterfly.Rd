@@ -4,7 +4,9 @@
 \name{butterfly}
 \alias{butterfly}
 \title{Butterfly data}
-\format{An object of class \code{"matrix"}.}
+\format{
+An object of class \code{"matrix"}.
+}
 \source{
 \href{}{}
 }
