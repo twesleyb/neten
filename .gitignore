@@ -43,3 +43,6 @@ vignettes/*.pdf
 
 # ARCHIVEd files
 ARCHIVE/
+
+# Ignore user's bin
+bin/
