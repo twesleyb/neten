@@ -4,7 +4,9 @@
 \name{butterflyNE}
 \alias{butterflyNE}
 \title{Butterfly data after Network Enhancment with orignal Matlab implementation}
-\format{An object of class \code{"matrix"}.}
+\format{
+An object of class \code{"matrix"}.
+}
 \source{
 \href{}{}
 }

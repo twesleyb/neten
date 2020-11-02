@@ -4,11 +4,11 @@
 #'
 #' @param W_in - input weighted N x N adjacency matrix
 #'
-#' @param alpha -
+#' @param alpha - the regularization parameter
 #'
-#' @param diffusion - the extent of diffusion
+#' @param diffusion - the extent of diffusion, typipcal values are 0.5, 1, 1.2, 2
 #'
-#' @param k - number of neighbors
+#' @param k - number of neighbors, if NULL then ceil(20,ncol(data))
 #'
 #' @return re-weighted N x N adjacency matrix.
 #'

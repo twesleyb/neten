@@ -9,11 +9,11 @@ neten(W_in, weight = "weight", alpha = 0.9, diffusion = 2, k = NULL)
 \arguments{
 \item{W_in}{- input weighted N x N adjacency matrix}
 
-\item{alpha}{-}
+\item{alpha}{- the regularization parameter}
 
-\item{diffusion}{- the extent of diffusion}
+\item{diffusion}{- the extent of diffusion, typipcal values are 0.5, 1, 1.2, 2}
 
-\item{k}{- number of neighbors}
+\item{k}{- number of neighbors, if NULL then ceil(20,ncol(data))}
 }
 \value{
 re-weighted N x N adjacency matrix.
