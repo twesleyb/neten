@@ -1,3 +1,0 @@
-#!/usr/bin/env Rscript
-# Styles R files.
-styler::style_dir("../R")

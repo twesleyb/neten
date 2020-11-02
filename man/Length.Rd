@@ -13,7 +13,7 @@ Length(dm)
 largest dimension of a matrix
 }
 \description{
-R implementation of Network Enhacement
+R implementation of matlab's length function
 }
 \references{
 \href{https://bit.ly/2RS5pLX}{Wang, Pourshafeie, Zitnik, et al., 2018}

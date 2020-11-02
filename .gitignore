@@ -40,3 +40,9 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# ARCHIVEd files
+ARCHIVE/
+
+# Ignore user's bin
+bin/
