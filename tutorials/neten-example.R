@@ -1,19 +1,16 @@
 #!/usr/bin/env Rscript
 
-# Installation.
+# Installation with devtools
 devtools::install_github("twesleyb/neten")
 
-# Load the package.
+# Installation with renv
+renv::install("twesleyb/neten")
+
+
+# butterfly example
+
 library(neten)
 
-# Example data, before and after NE.
 data(butterfly)
-data(butterflyNE) # output from Matlab::Network_Enhancement
 
-# Perform NE.
-dmNE <- Network_Enhancement(butterfly)
-
-# Check if R result is same as Matlab result.
-check <- all(round(dmNE,4) == round(butterflyNE,4))
-
-# They are the same!
+ne_butterfly <- neten(butterfly)
