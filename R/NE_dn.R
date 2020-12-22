@@ -4,7 +4,7 @@
 #'
 #' @param w - input weighted N x N adjacency matrix
 #'
-#' @param type - normalization method to be used.
+#' @param type - normalization method to be used, defaults to 'avg' for average (aka 'ave')
 #'
 #' @return normalized adjacency matrix
 #'
@@ -13,16 +13,12 @@
 #' @author Tyler Bradshaw, \href{https://github.com/twesleyb}{github}
 #'
 #' @references \href{https://bit.ly/2RS5pLX}{Wang, Pourshafeie, Zitnik, et al., 2018}
-#'
-#' @keywords network enhancement
-#'
-#' @export
-NE_dn <- function(w, type) {
-  # source("Length.R")
+
+NE_dn <- function(w, type="avg") {
   eps <- 2e-16
   w <- w * Length(w)
   D <- rowSums(abs(w)) + eps
-  if (type == "ave") {
+  if (type == "ave" | type == "avg") {
     D <- 1 / D
     D <- diag(D)
     wn <- D %*% w

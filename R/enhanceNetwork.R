@@ -25,11 +25,11 @@
 #' @keywords network enhancement
 #'
 #' @examples
+#' library(neten)
 #' data(butterfly)
 #' neten(butterfly)
 
-neten <- function(W_in, weight = "weight",
-                  alpha = 0.9, diffusion = 2, k = NULL) {
+neten <- function(W_in, alpha = 0.9, diffusion = 2, k = NULL) {
 
   # input should be a matrix
   if (!is.matrix(W_in)) {
@@ -56,7 +56,7 @@ neten <- function(W_in, weight = "weight",
   W_in1 <- W_in * (1 - diag(Length(W_in)))
   zeroindex <- which(colSums(abs(W_in)) > 0)
   W0 <- W_in[zeroindex, zeroindex]
-  W <- NE_dn(W0, "ave")
+  W <- NE_dn(W0)
   W <- (W + t(W)) / 2
   DD <- colSums(abs(W0))
 

@@ -18,11 +18,10 @@
 #'
 #' @export
 TransitionFields <- function(W) {
-  # source("Length.R")
   eps <- 2e-16
   zeroindex <- which(rowSums(W) == 0)
   W <- W * Length(W)
-  W <- NE_dn(W, "ave")
+  W <- NE_dn(W)
   W <- apply(W, 2, function(x) x / sqrt(sum(abs(x)) + eps))
   W <- tcrossprod(W)
   Wnew <- W

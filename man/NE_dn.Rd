@@ -4,12 +4,12 @@
 \alias{NE_dn}
 \title{NE_dn}
 \usage{
-NE_dn(w, type)
+NE_dn(w, type = "avg")
 }
 \arguments{
 \item{w}{- input weighted N x N adjacency matrix}
 
-\item{type}{- normalization method to be used.}
+\item{type}{- normalization method to be used, defaults to 'avg' for average (aka 'ave')}
 }
 \value{
 normalized adjacency matrix
@@ -27,5 +27,3 @@ microbma, \href{https://github.com/microbma}{github}
 
 Tyler Bradshaw, \href{https://github.com/twesleyb}{github}
 }
-\keyword{enhancement}
-\keyword{network}
