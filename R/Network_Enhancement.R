@@ -24,8 +24,6 @@
 #'
 #' @keywords network enhancement
 #'
-#' @import igraph
-#'
 #' @examples
 #' data(butterfly)
 #' neten(butterfly)
