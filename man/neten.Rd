@@ -9,14 +9,14 @@ neten(W_in, weight = "weight", alpha = 0.9, diffusion = 2, k = NULL)
 \arguments{
 \item{W_in}{- input weighted N x N adjacency matrix}
 
-\item{alpha}{- the regularization parameter}
+\item{alpha}{- regularization parameter}
 
-\item{diffusion}{- the extent of diffusion, typipcal values are 0.5, 1, 1.2, 2}
+\item{diffusion}{- diffusion parameter, typical values are 0.5, 1.0, 1.2, 2.0}
 
-\item{k}{- number of neighbors, if NULL then ceil(20,ncol(data))}
+\item{k}{- number of neighbors, if NULL then defaults to ceil(20,ncol(data))}
 }
 \value{
-re-weighted N x N adjacency matrix.
+re-weighted N x N adjacency matrix
 }
 \description{
 R implementation of Network Enhancement
@@ -26,7 +26,7 @@ data(butterfly)
 neten(butterfly)
 }
 \references{
-\href{https://bit.ly/2RS5pLX}{Wang, Pourshafeie, Zitnik, et al., 2018}
+\href{https://bit.ly/2RS5pLX}{Wang et al., 2018}
 }
 \author{
 Bo Wang, \href{https://github.com/wangboyunze}{github}
