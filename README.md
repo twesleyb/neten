@@ -1,5 +1,8 @@
 # Introduction
 
+__FIXME:__ looking for help to speed network enhancment up!
+
+
 This is a fork of [microbma's](https://github.com/microbma/neten) 
 R implementation of the [Network Enhancement](https://github.com/wangboyunze/Network_Enhancement)
 algorithm.
